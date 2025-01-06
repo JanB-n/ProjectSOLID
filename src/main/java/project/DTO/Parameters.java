@@ -2,12 +2,12 @@ package project.DTO;
 
 public class Parameters {
 
-    private int hour;
-    private int minute;
-    private int second;
+    private final int hour;
+    private final int minute;
+    private final int second;
 
-    private String oldTimeZone;
-    private String newTimeZone;
+    private final String oldTimeZone;
+    private final String newTimeZone;
 
     public Parameters(int hour, int minute, int second, String oldTimeZone, String newTimeZone) {
         this.hour = hour;

@@ -7,7 +7,12 @@ public class PDT implements TimeZone{
     }
 
     @Override
-    public int getOffsetFromCET(){
+    public int getHourOffsetFromCET(){
         return -9;
+    }
+
+    @Override
+    public int getMinuteOffsetFromCET(){
+        return 0;
     }
 }

@@ -3,8 +3,12 @@ package project;
 import project.DTO.Parameters;
 
 public class InputValidator {
-    private final TimeZoneManager timeZoneManager = new TimeZoneManager();
+    private final TimeZoneManager timeZoneManager;
     private ErrorMessenger errorMessenger;
+
+    InputValidator(TimeZoneManager timeZoneManager) {
+        this.timeZoneManager = timeZoneManager;
+    }
 
     private void validateTime(int hour, int minute, int second) {
         if (hour < 0 || hour > 23) {

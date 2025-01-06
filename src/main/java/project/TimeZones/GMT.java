@@ -7,7 +7,12 @@ public class GMT implements TimeZone{
     }
 
     @Override
-    public int getOffsetFromCET(){
+    public int getHourOffsetFromCET(){
         return -1;
+    }
+
+    @Override
+    public int getMinuteOffsetFromCET(){
+        return 0;
     }
 }

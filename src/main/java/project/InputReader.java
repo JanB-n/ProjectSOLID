@@ -5,12 +5,12 @@ import project.DTO.Parameters;
 import java.util.Scanner;
 
 public class InputReader {
-    private final InputParser inputParser = new InputParser();
+    private final InputParser inputParser;
+    String input;
+    private boolean exit = false;
 
-    private String getUserInput(){
-        Scanner scanner = new Scanner(System.in);
-        System.out.println("Enter arguments:");
-        return scanner.nextLine();
+    InputReader(InputParser inputParser) {
+        this.inputParser = inputParser;
     }
 
     private String[] splitUserInput(String input){
@@ -20,8 +20,17 @@ public class InputReader {
         return parts;
     }
 
+    public boolean checkForExit(){
+        return input.equals("exit");
+    }
+
+    public void loadUserInput(){
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Enter arguments:");
+        input =  scanner.nextLine();
+    }
+
     public Parameters getParameters() {
-        String input = getUserInput();
         String[] parts = splitUserInput(input);
         return inputParser.parseInput(parts);
     }
